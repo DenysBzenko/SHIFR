@@ -90,5 +90,36 @@ class Program
         for (int i = 0; i < numBytes; i++)
             result[i] = Convert.ToByte(binaryString.ToString(i * 8, Math.Min(8, binaryString.Length - i * 8)), 2);
 
-        return result;
+        return result;// Читання закодованого тексту із файлу та його розшифрування
+        static string DecodeText(string inputFilePath, Dictionary<char, string> huffmanCodes)
+        {
+            // Створення зворотної таблиці для розшифрування (ключі і значення міняються місцями)
+            var reverseHuffmanCodes = huffmanCodes.ToDictionary(pair => pair.Value, pair => pair.Key);
+
+            // Завантаження закодованого тексту з файлу у вигляді байтів
+            byte[] encodedBytes = File.ReadAllBytes(inputFilePath);
+
+            // Перетворення масиву байтів у двійковий рядок
+            var binaryString = new StringBuilder();
+            foreach (var byteValue in encodedBytes)
+            {
+                binaryString.Append(Convert.ToString(byteValue, 2).PadLeft(8, '0'));
+            }
+
+            // Розшифрування двійкового рядка за допомогою зворотної таблиці кодів Хафмана
+            var decodedText = new StringBuilder();
+            var currentCode = "";
+            foreach (var bit in binaryString.ToString())
+            {
+                currentCode += bit;
+                if (reverseHuffmanCodes.ContainsKey(currentCode))
+                {
+                    decodedText.Append(reverseHuffmanCodes[currentCode]);
+                    currentCode = "";
+                }
+            }
+
+            // Повернення розшифрованого тексту
+            return decodedText.ToString();
+        }
     }
