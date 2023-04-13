@@ -22,4 +22,42 @@ class Program
             else
                 result[symbol] = 1;
         }
-        return result;
+        return result;}
+
+// Побудова дерева Хафмана
+    static Node BuildHuffmanTree(Dictionary<char, int> frequencies)
+    {
+        // Створення списку вузлів дерева на основі частот символів
+        var nodes = new List<Node>(frequencies.Select(f => new Node { Symbol = f.Key, Frequency = f.Value }));
+
+        // Цикл виконується, доки в списку не залишиться тільки один вузол (корінь дерева Хафмана)
+        while (nodes.Count > 1)
+        {
+            // Впорядкування вузлів за частотою (по зростанню)
+            var orderedNodes = nodes.OrderBy(node => node.Frequency).ToList();
+
+            // Якщо в списку є принаймні два 
+            if (orderedNodes.Count >= 2)
+            {
+                // Створення нового батьківського вузла
+                var parentNode = new Node
+                {
+                    // Частота батьківського вузла дорівнює сумі частот двох найменших вузлів
+                    Frequency = orderedNodes[0].Frequency + orderedNodes[1].Frequency,
+                    // Перший найменший вузол стає лівим нащадком
+                    Left = orderedNodes[0],
+                    // Другий найменший вузол стає правим нащадком
+                    Right = orderedNodes[1]
+                };
+
+                // Видалення двох найменших вузлів зі списку
+                nodes.Remove(orderedNodes[0]);
+                nodes.Remove(orderedNodes[1]);
+                // Додавання нового батьківського вузла до списку
+                nodes.Add(parentNode);
+            }
+        }
+
+        // Повернення кореня дерева Хафмана (перший елемент списку, якщо він існує, або null)
+        return nodes.FirstOrDefault();
+    }
