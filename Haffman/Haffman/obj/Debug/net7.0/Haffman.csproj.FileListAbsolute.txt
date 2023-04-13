@@ -1,0 +1,15 @@
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/bin/Debug/net7.0/Haffman
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/bin/Debug/net7.0/Haffman.deps.json
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/bin/Debug/net7.0/Haffman.runtimeconfig.json
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/bin/Debug/net7.0/Haffman.dll
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/bin/Debug/net7.0/Haffman.pdb
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/Haffman.csproj.AssemblyReference.cache
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/Haffman.GeneratedMSBuildEditorConfig.editorconfig
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/Haffman.AssemblyInfoInputs.cache
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/Haffman.AssemblyInfo.cs
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/Haffman.csproj.CoreCompileInputs.cache
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/Haffman.dll
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/refint/Haffman.dll
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/Haffman.pdb
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/Haffman.genruntimeconfig.cache
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/ref/Haffman.dll

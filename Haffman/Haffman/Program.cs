@@ -90,7 +90,10 @@ class Program
         for (int i = 0; i < numBytes; i++)
             result[i] = Convert.ToByte(binaryString.ToString(i * 8, Math.Min(8, binaryString.Length - i * 8)), 2);
 
-        return result;// Читання закодованого тексту із файлу та його розшифрування
+        return result;
+    }
+
+    // Читання закодованого тексту із файлу та його розшифрування
         static string DecodeText(string inputFilePath, Dictionary<char, string> huffmanCodes)
         {
             // Створення зворотної таблиці для розшифрування (ключі і значення міняються місцями)
@@ -122,4 +125,37 @@ class Program
             // Повернення розшифрованого тексту
             return decodedText.ToString();
         }
+
+
+        static void Main()
+    {
+        string inputFilePath = "https://raw.githubusercontent.com/kse-ua/algorithms/main/res/sherlock.txt";
+        string outputFilePath = "encoded_text.bin";
+
+        // Зчитування тексту з файлу
+        string text = new WebClient().DownloadString(inputFilePath);
+        // Підрахунок частоти символів
+        var frequencies = CountSymbols(text);
+        // Побудова дерева Хафмана
+        var huffmanTree = BuildHuffmanTree(frequencies);
+        // Генерація таблиці кодів Хафмана
+        var huffmanCodes = new Dictionary<char, string>();
+        GenerateHuffmanCodes(huffmanTree, "", huffmanCodes);
+
+        // Виведення таблиці кодів Хафмана
+        foreach (var code in huffmanCodes)
+            Console.WriteLine($"Symbol: {code.Key}, Code: {code.Value}");
+
+        // Кодування тексту за допомогою таблиці кодів Хафмана
+        byte[] encodedBytes = EncodeText(text, huffmanCodes);
+        // Запис закодованого тексту у файл у форматі байтів
+        File.WriteAllBytes(outputFilePath, encodedBytes);
+
+        Console.WriteLine("Text was encoded and saved in file: encoded_text.bin.");
+
+        // Читання закодованого тексту, його розшифрування та виведення на екран
+        string decodedText = DecodeText("encoded_text.bin", huffmanCodes);
+        Console.WriteLine("\nDecoded text:");
+        Console.WriteLine(decodedText);
     }
+}
