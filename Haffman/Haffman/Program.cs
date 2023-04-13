@@ -61,3 +61,16 @@ class Program
         // Повернення кореня дерева Хафмана (перший елемент списку, якщо він існує, або null)
         return nodes.FirstOrDefault();
     }
+    
+    // Генерація кодів Хафмана
+    static void GenerateHuffmanCodes(Node node, string code, Dictionary<char, string> codes)
+    {
+        if (node == null)
+            return;
+
+        if (node.Left == null && node.Right == null)
+            codes[node.Symbol] = code;
+
+        GenerateHuffmanCodes(node.Left, code + "0", codes);
+        GenerateHuffmanCodes(node.Right, code + "1", codes);
+    }

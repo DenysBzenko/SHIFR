@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\IT\\ConsoleApplication4\\SHIFR\\Haffman\\Haffman\\Haffman.csproj": {}
+    "/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/Haffman.csproj": {}
   },
   "projects": {
-    "D:\\IT\\ConsoleApplication4\\SHIFR\\Haffman\\Haffman\\Haffman.csproj": {
+    "/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/Haffman.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\IT\\ConsoleApplication4\\SHIFR\\Haffman\\Haffman\\Haffman.csproj",
+        "projectUniqueName": "/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/Haffman.csproj",
         "projectName": "Haffman",
-        "projectPath": "D:\\IT\\ConsoleApplication4\\SHIFR\\Haffman\\Haffman\\Haffman.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\IT\\ConsoleApplication4\\SHIFR\\Haffman\\Haffman\\obj\\",
+        "projectPath": "/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/Haffman.csproj",
+        "packagesPath": "/Users/zakerden1234/.nuget/packages/",
+        "outputPath": "/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/zakerden1234/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\User\\.dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/zakerden1234/.dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
         }
       }
     }
