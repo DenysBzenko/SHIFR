@@ -74,3 +74,21 @@ class Program
         GenerateHuffmanCodes(node.Left, code + "0", codes);
         GenerateHuffmanCodes(node.Right, code + "1", codes);
     }
+    
+    // Кодування тексту за допомогою таблиці кодів Хафмана
+    static byte[] EncodeText(string text, Dictionary<char, string> huffmanCodes)
+    {
+        var binaryString = new StringBuilder();
+        // Для кожного символу в тексті додавання його коду Хафмана до двійкового рядка
+        foreach (var symbol in text)
+            binaryString.Append(huffmanCodes[symbol]);
+
+        // Визначення кількості байтів, необхідних для зберігання двійкового рядка
+        int numBytes = (binaryString.Length + 7) / 8;
+        byte[] result = new byte[numBytes];
+        // Заповнення масиву байтів значеннями, що відповідають 8-бітним фрагментам двійкового рядка
+        for (int i = 0; i < numBytes; i++)
+            result[i] = Convert.ToByte(binaryString.ToString(i * 8, Math.Min(8, binaryString.Length - i * 8)), 2);
+
+        return result;
+    }
