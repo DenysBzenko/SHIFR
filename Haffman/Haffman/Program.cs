@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Text;
+using Newtonsoft.Json;
 
 class Node
 {
@@ -141,20 +142,24 @@ class Program
         // Генерація таблиці кодів Хафмана
         var huffmanCodes = new Dictionary<char, string>();
         GenerateHuffmanCodes(huffmanTree, "", huffmanCodes);
+        
+        File.WriteAllText("HuffmanCodes.txt", JsonConvert.SerializeObject(huffmanCodes));
+        var huffmanCodesfromFILE = JsonConvert.DeserializeObject<Dictionary<char, string>>
+            (File.ReadAllText("HuffmanCodes.txt"));
 
         // Виведення таблиці кодів Хафмана
-        foreach (var code in huffmanCodes)
+        foreach (var code in huffmanCodesfromFILE)
             Console.WriteLine($"Symbol: {code.Key}, Code: {code.Value}");
 
         // Кодування тексту за допомогою таблиці кодів Хафмана
-        byte[] encodedBytes = EncodeText(text, huffmanCodes);
+        byte[] encodedBytes = EncodeText(text, huffmanCodesfromFILE);
         // Запис закодованого тексту у файл у форматі байтів
         File.WriteAllBytes(outputFilePath, encodedBytes);
-
+        
         Console.WriteLine("Text was encoded and saved in file: encoded_text.bin.");
 
         // Читання закодованого тексту, його розшифрування та виведення на екран
-        string decodedText = DecodeText("encoded_text.bin", huffmanCodes);
+        string decodedText = DecodeText("encoded_text.bin", huffmanCodesfromFILE);
         Console.WriteLine("\nDecoded text:");
         Console.WriteLine(decodedText);
     }

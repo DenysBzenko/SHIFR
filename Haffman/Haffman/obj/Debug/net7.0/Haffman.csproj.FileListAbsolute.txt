@@ -13,3 +13,5 @@
 /Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/Haffman.pdb
 /Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/Haffman.genruntimeconfig.cache
 /Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/ref/Haffman.dll
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/zakerden1234/Desktop/SHIFR/Haffman/Haffman/obj/Debug/net7.0/Haffman.csproj.CopyComplete
